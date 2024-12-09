@@ -38,7 +38,7 @@ RickAndMorty é uma aplicação Front end construída em React, Vite e Sass com 
 
 ## Acesse o deploy
 
-## 🔗[Clique aqui para acessar o Deploy](rick-and-morty-tau-one.vercel.app)
+## 🔗[Clique aqui para acessar o Deploy](https://rick-and-morty-tau-one.vercel.app/)
 
 ## ✒️ Autores
 
