@@ -1,11 +1,21 @@
+import { useNavigate } from 'react-router-dom'
 import '../styles/Components/cardCharacter.sass'
-import { Skeleton } from '@mui/material'
+import { Skeleton, Stack } from '@mui/material'
+import { alteredName } from '../utils/'
 
-const CardCharacter = ({ ...props }) => {
+export const CardCharacter = ({ ...props }) => {
   const character = props.character
   const isLoading = props.isLoading
+  const navigate = useNavigate()
+
+  const characterNameUrl = alteredName(character.name)
+
+  const goToCharacter = (character) => {
+    navigate(`/character/${characterNameUrl}`, { state: character })
+  }
+
   return isLoading ? (
-    <div className="card-character">
+    <div className="card-character" onClick={() => goToCharacter(character)}>
       <img src={character.image} alt={character.name} />
 
       <div className="character-informations">
@@ -31,13 +41,12 @@ const CardCharacter = ({ ...props }) => {
       </div>
     </div>
   ) : (
-    <Skeleton
-      sx={{ bgcolor: '#1c1c1c', minWidth: '500px' }}
-      variant="rounded"
-      animation="wave"
-      width={'40%'}
-      height={'250px'}
-    />
+    <Stack spacing={1} className="container-skeleton">
+      <Skeleton
+        className="skeleton-character"
+        variant="rounded"
+        animation="wave"
+      />
+    </Stack>
   )
 }
-export default CardCharacter

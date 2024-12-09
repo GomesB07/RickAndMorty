@@ -1,4 +1,5 @@
 @use 'variables'
+
 .card-character
     background-color: variables.$background-color-card
     min-width: 500px
@@ -8,10 +9,12 @@
     flex-direction: row
     border-radius: 8px
     cursor: pointer
+    
     img
         height: 100%
         border-top-left-radius: 8px
         border-bottom-left-radius: 8px
+
     .character-informations
         width: 60%
         height: 100%
@@ -20,29 +23,107 @@
         justify-content: center
         gap: 20px
         padding-left: 10px
+
         h2
             font-size: 25px
+
         h2,h3
             color: variables.$text-color-primary
+
         .information-status
             width: 100%
             display: flex
             flex-direction: row
             align-items: center
             gap: 10px
+
             .circle-status
                 width: 15px
                 height: 15px
                 border-radius: 100%
+
             .circle-status.alive
                 background-color: green
+
             .circle-status.dead
                 background-color: red
+
             .circle-status.unknown
                 background-color: gray
+
         .information-origin
             width: 100%
+
             p
                 color: gray
+
             h3
-                font-size: 25px
+                font-size: 25px    
+
+
+
+@media (max-width: 900px) 
+
+    .card-character
+        height: auto
+        display: flex
+        align-items: center
+
+        img
+            width: 50%
+
+    .container-skeleton
+        width: 100%
+        height: auto
+        align-items: center
+
+        .skeleton-character
+            width: 90% !important
+            height: 200px !important
+            background-color: #1c1c1c
+
+
+@media (max-width: 540px)
+    .card-character
+        min-width: 90%
+
+@media (max-width: 450px)
+    .card-character
+        .character-informations h2
+            font-size: 18px
+
+        .information-status h3
+            font-size: 15px
+
+        .character-informations .information-origin h3
+                font-size: 20px
+
+@media (max-width: 375px)
+    .card-character
+        display: flex
+        flex-direction: row
+        align-items: center
+
+        img
+            width: 50%
+            border-radius: 5px 0 0 5px
+
+        .character-informations
+            h2
+                font-size: 15px
+
+            .information-status h3
+                font-size: 12px
+            
+            .information-origin
+                p
+                    font-size: 15px
+
+                h3
+                    font-size: 12px
+        
+    .skeleton-character
+        height: 200px !important
+        width: 90% !important
+        position: relative !important
+        z-index: 20 !important

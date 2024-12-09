@@ -1,0 +1,206 @@
+@use '../Components/variables'
+
+
+.container
+    width: 100vw
+    height: auto
+    min-height: 90vh
+    padding-top: 20px
+
+.container-name-image-specifications
+    width: 100%
+    height: auto
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+
+.container-name-image
+    width: 40%
+    min-width: 400px
+    height: auto
+    max-height: 500px
+    background-color: #1a1a1a
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    gap: 20px
+    border-radius: 5px
+
+    img
+        border-radius: 5px
+    
+    h1
+        color: #fff
+        font-size: 25px
+
+.container-specifications
+    width: 50%
+    min-width: 400px
+    min-height: 400px
+    height: auto
+    background-color: #1a1a1a
+    padding: 20px 10px
+    border-radius: 5px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+.id
+    width: 100%
+    text-align: end
+    padding-right: 10px
+
+    p
+        color: #fff
+        font-weight: 500
+        font-size: 25px
+
+        span
+            font-size: 15px
+
+.subcontainer-specifications
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    gap: 10px
+
+    p
+        color: variables.$text-color-primary
+        font-size: 18px
+        font-weight: 300
+
+    span
+        font-size: 15px
+        font-weight: 200
+        color: #979797
+
+    .specie-gender, .origin, .first-see, .type, .status, .episode-container
+        width: 100%
+        height: auto
+        min-height: 30px
+        background-color: #232323
+        border-radius: 5px
+        padding: 10px
+        
+        .p-link
+            text-decoration: underline
+            cursor: pointer
+
+        .p-link:hover
+            color: variables.$button-color-primary
+    
+    .origin, .first-see, .type
+        display: flex
+        flex-direction: column
+        gap: 8px
+
+    .status
+        display: flex
+        flex-direction: row
+        align-items: center
+        gap: 10px
+
+        .circle-status
+            border-radius: 100%
+            width: 15px
+            height: 15px
+
+        &.alive
+            background-color: green
+
+        &.dead
+            background-color: red
+
+        &.unknown
+            background-color: grey
+
+    .episode-container
+        width: 100%
+        height: auto
+        display: flex
+        flex-direction: column
+        gap: 5px
+
+        .subcontainer-episode
+            display: grid
+            margin-top: 10px
+            height: 100%
+            grid-template-columns: repeat(5, 1fr)
+            grid-gap: 20px
+
+            .episode
+                width: auto
+                height: auto
+                padding: 20px 20px
+                background-color: #1A1A1A
+                border-radius: 5px
+                cursor: pointer
+                text-align: center
+
+                &:hover
+                    background-color: variables.$button-color-primary
+
+.container-more-characters
+    width: 100%
+    height: auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 30px 0
+
+    h2
+        font-size: 28px
+        color: variables.$text-color-primary
+        font-weight: 500
+
+.subcontainer-more-characters
+        padding: 20px 0
+        width: 100%
+        height: auto
+        display: flex
+        justify-content: center
+        flex-flow: row wrap
+        gap: 20px
+        
+
+@media (max-width: 950px)
+    .container-name-image-specifications
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 20px
+
+        .container-name-image
+            padding: 20px 0
+
+@media (max-width: 390px)
+    .container-name-image-specifications
+        width: 90%
+    
+        .container-name-image, .container-specifications
+            width: 100%
+            min-width: 0
+            
+
+
+@media (max-width: 375px)
+    
+    .container-name-image, .container-specifications
+        min-width: 90%
+
+    .subcontainer-episode
+        display: grid
+        grid-gap: 5px !important
+        
+    .stack-skeleton
+            width: 100%
+            height: auto
+            display: flex
+            align-items: center
+
+            .skeleton
+                width: 90%
+                height: 390px
+                background-color: #1c1c1c

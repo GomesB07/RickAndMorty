@@ -11,6 +11,14 @@ module.exports = {
   },
   plugins: ['react', 'prettier'],
   rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+        tabWidth: 2,
+        useTabs: false,
+      },
+    ],
     'require-jsdoc': 0,
     'react/react-in-jsx-scope': 'off',
     'no-console': 'off',

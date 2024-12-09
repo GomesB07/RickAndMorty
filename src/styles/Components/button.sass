@@ -1,0 +1,17 @@
+@use 'variables'
+
+.btn-comp
+    width: 100px
+    height: 40px
+    border: none
+    border-radius: 5px
+    cursor: pointer
+    color: variables.$text-color-primary
+    background-color: variables.$button-color-primary
+
+.btn-comp:hover
+    background-color: variables.$button-color-secondary
+
+@media (max-width: 1000px)
+    .btn-comp
+        width: 90%
