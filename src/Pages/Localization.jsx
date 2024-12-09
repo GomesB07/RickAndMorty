@@ -7,7 +7,8 @@ import { alteredName } from '../utils'
 
 const Localization = () => {
   const [localization, setLocalization] = useState()
-  const [residents, setResidents] = useState()
+  const [residents, setResidents] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
   const params = useParams()
   const localizationName = params.name
 
@@ -31,12 +32,13 @@ const Localization = () => {
 
       const getResidents = async () => {
         const data = await getMultipleCharacters(residentsId)
-        setResidents(data)
-        console.log(data)
+        setResidents(Array.isArray(data) ? data : [data])
+        setIsLoading(true)
       }
       getResidents()
     }
   }, [localization])
+
 
   return (
     <>
@@ -77,7 +79,7 @@ const Localization = () => {
                 <CardCharacter
                   key={resident.id}
                   character={resident}
-                  isLoading={true}
+                  isLoading={isLoading}
                 />
               ))}
           </div>
